@@ -1,0 +1,662 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-background-main font-main text-type-text;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-size: 1.0248em;
+}
+
+html[data-full],
+html[data-full] body {
+  overscroll-behavior-y: none;
+}
+
+body[data-no-scroll] {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+#root {
+  padding: 0.05px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+}
+
+body[data-no-select] {
+  user-select: none;
+}
+
+html[data-no-scroll],
+html[data-no-scroll] body {
+  overflow: hidden;
+}
+
+.roll {
+  animation: roll 1s;
+}
+
+.roll-infinite {
+  animation: roll 2s infinite;
+}
+
+@keyframes roll {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.google-cast-button:not(.casting) google-cast-launcher {
+  @apply brightness-[500];
+}
+
+.is-mobile-view .overflow-y-auto {
+  height: 60vh;
+}
+
+.h-screen {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+:root {
+  --slider-height: 0.25rem;
+  --slider-border-radius: 1em;
+  --slider-progress-background: #8652bb;
+}
+
+input[type="range"].styled-slider {
+  height: var(--slider-height);
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: var(--slider-border-radius);
+  background: #1c161b;
+}
+
+/*progress support*/
+input[type="range"].styled-slider.slider-progress {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 1rem + var(--ratio) * (100% - 1rem));
+}
+
+/*webkit*/
+input[type="range"].styled-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--slider-border-radius);
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 0 2px #000000;
+  margin-top: calc(0.25em * 0.5 - 1rem * 0.5);
+}
+
+input[type="range"].styled-slider::-webkit-slider-runnable-track {
+  height: var(--slider-height);
+  border: none;
+  box-shadow: none;
+  border-radius: var(--slider-border-radius);
+}
+
+input[type="range"].styled-slider::-webkit-slider-thumb:hover {
+  background: #dcdcdc;
+}
+
+input[type="range"].styled-slider.slider-progress::-webkit-slider-runnable-track {
+  background:
+    linear-gradient(
+        var(--slider-progress-background),
+        var(--slider-progress-background)
+      )
+      0 / var(--sx) 100% no-repeat,
+    #1c161b;
+}
+
+/*mozilla*/
+input[type="range"].styled-slider::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--slider-border-radius);
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 0 2px #000000;
+}
+
+input[type="range"].styled-slider::-moz-range-track {
+  height: var(--slider-height);
+  border: none;
+  border-radius: var(--slider-border-radius);
+  background: #1c161b;
+  box-shadow: none;
+}
+
+input[type="range"].styled-slider::-moz-range-thumb:hover {
+  background: #dcdcdc;
+}
+
+input[type="range"].styled-slider.slider-progress::-moz-range-track {
+  background:
+    linear-gradient(
+        var(--slider-progress-background),
+        var(--slider-progress-background)
+      )
+      0 / var(--sx) 100% no-repeat,
+    #1c161b;
+}
+
+/*ms*/
+input[type="range"].styled-slider::-ms-fill-upper {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type="range"].styled-slider::-ms-fill-lower {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type="range"].styled-slider::-ms-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--slider-border-radius);
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 0 2px #000000;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+input[type="range"].styled-slider::-ms-track {
+  height: var(--slider-height);
+  border-radius: var(--slider-border-radius);
+  background: #1c161b;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type="range"].styled-slider::-ms-thumb:hover {
+  background: #dcdcdc;
+}
+
+input[type="range"].styled-slider.slider-progress::-ms-fill-lower {
+  height: var(--slider-height);
+  border-radius: var(--slider-border-radius) 0 0 5px;
+  margin: -undefined 0 -undefined -undefined;
+  background: var(--slider-progress-background);
+  border: none;
+  border-right-width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme("colors.video.context.border");
+  border: 5px solid transparent;
+  border-left: 0;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar {
+  /* For some reason the styles don't get applied without the width */
+  width: 13px;
+}
+
+.grecaptcha-badge {
+  display: none !important;
+}
+
+.tabbable:focus-visible {
+  outline: 2px solid theme("colors.themePreview.primary");
+  box-shadow: 0 0 10px theme("colors.themePreview.secondary");
+}
+
+[dir="rtl"] .transform {
+  /* Invert horizontal X offset on transform (Tailwind RTL plugin does the rest) */
+  transform: translate(calc(var(--tw-translate-x) * -1), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+[dir="ltr"] .transform {
+  /* default - otherwise it overwrites*/
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+/* Horizontal media shelves scroll natively but should not show a bar;
+   Firefox is handled inline with scrollbar-width. */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================================
+   Home hero
+   Every transform below lives on its own layer: the plate owns
+   parallax and recede, an inner wrapper owns the one-off warm-up,
+   and the image owns the push-in. Stacking them on one element
+   just means the last rule wins and the others silently vanish.
+   ============================================================ */
+
+@keyframes flux-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.flux-rise {
+  opacity: 0;
+  animation: flux-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes flux-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* slow push-in across the life of a slide */
+@keyframes flux-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+.flux-kenburns {
+  animation-name: flux-kenburns;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+/* the projector coming up to temperature - once, on first paint */
+@keyframes flux-warmup {
+  from {
+    transform: scale(1.16);
+    filter: saturate(0.3) brightness(0.35) contrast(1.1);
+  }
+  to {
+    transform: scale(1);
+    filter: saturate(1) brightness(1) contrast(1);
+  }
+}
+.flux-warmup {
+  animation: flux-warmup 1900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* pointer parallax, and receding behind the rows on scroll */
+.flux-hero-plate {
+  transform: translate3d(
+      calc(var(--px, 0) * -16px),
+      calc(var(--py, 0) * -11px),
+      0
+    )
+    scale(calc(1.05 - var(--recede, 0) * 0.05));
+  filter: blur(calc(var(--recede, 0) * 7px));
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, filter;
+}
+.flux-hero-copy {
+  transform: translate3d(
+    calc(var(--px, 0) * -24px),
+    calc(var(--py, 0) * -13px),
+    0
+  );
+  opacity: calc(1 - var(--recede, 0) * 1.25);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* film grain: sized past the edges so the drift never exposes a seam */
+@keyframes flux-grain-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(-6%, 4%, 0);
+  }
+  40% {
+    transform: translate3d(5%, -5%, 0);
+  }
+  60% {
+    transform: translate3d(-4%, -3%, 0);
+  }
+  80% {
+    transform: translate3d(6%, 5%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.flux-grain {
+  position: absolute;
+  inset: -14%;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-size: 170px 170px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='170'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  animation: flux-grain-drift 900ms steps(1, end) infinite;
+  will-change: transform;
+}
+
+.flux-vignette {
+  background: radial-gradient(
+    118% 78% at 50% 44%,
+    transparent 42%,
+    rgba(0, 0, 0, 0.28) 76%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+@keyframes flux-card-open {
+  from {
+    opacity: 0.35;
+    transform: translate(var(--card-dx), var(--card-dy))
+      scale(var(--card-sx), var(--card-sy));
+    border-radius: 0.75rem;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.flux-hover-card {
+  transform-origin: center;
+  animation: flux-card-open 480ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+@keyframes flux-card-close {
+  from {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    opacity: 0.2;
+    transform: translate(var(--card-dx), var(--card-dy))
+      scale(var(--card-sx), var(--card-sy));
+  }
+}
+.flux-hover-card.is-closing {
+  pointer-events: none;
+  animation: flux-card-close 280ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* Profile entry starts as a perforated cinema ticket and floods the screen
+   with the selected profile colour before registration advances. */
+@keyframes profile-ticket-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.55) rotate(-5deg);
+  }
+  38% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(18) rotate(0);
+    border-radius: 0;
+  }
+}
+@keyframes profile-ticket-backdrop {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: var(--ticket-color-b);
+  }
+}
+.profile-ticket-transition {
+  animation: profile-ticket-backdrop 780ms ease forwards;
+}
+.profile-ticket-shape {
+  position: relative;
+  display: flex;
+  width: 22rem;
+  max-width: 82vw;
+  aspect-ratio: 1.9;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    var(--ticket-color-a),
+    var(--ticket-color-b)
+  );
+  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.65);
+  animation: profile-ticket-enter 780ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.profile-ticket-shape::before,
+.profile-ticket-shape::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: #080808;
+  transform: translateY(-50%);
+}
+.profile-ticket-shape::before {
+  left: -1.25rem;
+}
+.profile-ticket-shape::after {
+  right: -1.25rem;
+}
+
+/* Profile entry: five projector-light strips accelerate from the selected
+   avatar, cross into a shared vanishing point, then flood the next scene. */
+@keyframes profile-line-flight {
+  0% {
+    transform: translate3d(-115vw, 0, 0) skewX(-18deg) scaleX(0.08);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  72% {
+    transform: translate3d(0, 0, 0) skewX(-8deg) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(115vw, 0, 0) skewX(0) scaleX(2.8);
+    opacity: 0;
+  }
+}
+@keyframes profile-mark-zoom {
+  0% {
+    transform: translate(-50%, -50%) scale(0.45);
+    opacity: 0;
+    filter: blur(12px);
+  }
+  28% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  68% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4.5);
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+@keyframes profile-scene-fill {
+  0%,
+  62% {
+    background: transparent;
+  }
+  100% {
+    background: var(--profile-b);
+  }
+}
+.profile-lines-transition {
+  animation: profile-scene-fill 1050ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+.profile-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: clamp(5px, 1.1vh, 12px);
+  transform-origin: center;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--profile-a) 18%,
+    #fff 48%,
+    var(--profile-b) 75%,
+    transparent
+  );
+  box-shadow: 0 0 28px color-mix(in srgb, var(--profile-a) 70%, transparent);
+  animation: profile-line-flight 900ms cubic-bezier(0.55, 0.04, 0.18, 1) both;
+}
+.profile-line-1 {
+  top: 24%;
+  animation-delay: 0ms;
+}
+.profile-line-2 {
+  top: 37%;
+  animation-delay: 55ms;
+}
+.profile-line-3 {
+  top: 50%;
+  animation-delay: 105ms;
+}
+.profile-line-4 {
+  top: 63%;
+  animation-delay: 150ms;
+}
+.profile-line-5 {
+  top: 76%;
+  animation-delay: 190ms;
+}
+.profile-entry-mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  animation: profile-mark-zoom 1050ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.profile-avatar-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.profile-avatar-button:hover::after {
+  transform: translateX(120%) skewX(-18deg);
+}
+
+@keyframes profile-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.profile-fade-transition {
+  background: color-mix(in srgb, var(--profile-a) 38%, #080808);
+  animation: profile-fade-in 420ms ease-in-out both;
+}
+.profile-fade-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  animation: profile-fade-in 260ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flux-rise {
+    opacity: 1;
+    animation: none;
+  }
+  .flux-kenburns,
+  .flux-warmup,
+  .flux-grain {
+    animation: none;
+  }
+  .flux-hero-plate,
+  .flux-hero-copy {
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+  .flux-hover-card,
+  .profile-ticket-transition,
+  .profile-ticket-shape {
+    animation: none;
+  }
+  .profile-lines-transition,
+  .profile-fade-transition {
+    background: var(--profile-a);
+    animation: none;
+  }
+  .profile-line {
+    display: none;
+  }
+  .profile-entry-mark {
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
+}

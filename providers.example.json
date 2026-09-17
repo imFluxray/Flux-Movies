@@ -1,0 +1,21 @@
+[
+  {
+    "id": "example-source",
+    "name": "Example Source",
+    "url": "https://source.example.com",
+    "movie_url_pattern": "{url}/movie/{tmdbId}",
+    "tv_url_pattern": "{url}/tv/{tmdbId}/{season}/{episode}",
+    "scraper_timeout_seconds": 20,
+    "enabled": true
+  },
+  {
+    "id": "megaplay",
+    "name": "MegaPlay",
+    "url": "https://megaplay.buzz",
+    "movie_url_pattern": "",
+    "tv_url_pattern": "",
+    "megaplay": true,
+    "scraper_timeout_seconds": 20,
+    "enabled": true
+  }
+]

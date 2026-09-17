@@ -1,0 +1,12 @@
+{
+  "name": "flux-party",
+  "private": true,
+  "description": "Watch party rooms, host-driven playback sync and chat for Flux Movies",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

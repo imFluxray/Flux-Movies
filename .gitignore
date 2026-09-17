@@ -1,0 +1,35 @@
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# config
+# dependencies
+# misc
+# other package managers
+# production
+# testing
+.DS_Store
+.env
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.pnp.js
+/.pnp
+/coverage
+/dist
+/stats.html
+dev-dist
+node_modules
+npm-debug.log*
+package-lock.json
+src/*.bak*
+yarn.lock
+
+# runtime source list - holds private hosts, never commit it
+providers.json
+providers.json.*
+# local backups, build snapshots and one-off test scripts
+*.bak
+*.bak-*
+dist-*
+.codex-test-*
+node-compile-cache
